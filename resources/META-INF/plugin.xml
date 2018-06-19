@@ -1,0 +1,84 @@
+<idea-plugin>
+  <id>TemplateBuilderZ</id>
+  <name>TemplateBuilderZ</name>
+  <version>2.0_z1.0</version>
+  <vendor email="1129090915@qq.com" url="http://puke3615.github.io">Contact me</vendor>
+
+  <description><![CDATA[
+      <b><a href="https://puke3615.github.io/2017/03/06/TemplateBuilder/">Click Here For User Guide</a><br></b>
+      <br>
+      <b>Quick Start</b><br><hr>
+      1. Select .java or .xml(layout resource) files<br>
+      2. Key down ALT + T<br>
+      3. Configure template info<br>
+      4. Restart your IDE and try it<br>
+      <br>
+      <b>Don't repeat yourself and enjoy your time.</b><br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <b>v2.0</b><br>
+      1. Compat for jdk1.6+<br>
+      2. Compat multi IntelliJ products<br>
+      3. Optimize judgment about Activity<br>
+      <br>
+      <b>v1.10</b><br>
+      1. Delete old template when perform overwriting operation<br>
+      <br>
+      <b>v1.9</b><br>
+      1. Fix bug that templates can't be generated in different package path<br>
+      2. Change default template name from project name to module name<br>
+      <br>
+      <b>v1.8</b><br>
+      1. Fix the issue that the build.gradle.ftl file can't be merged sometimes<br>
+      <br>
+      <b>v1.7</b><br>
+      1. Fix bug on Windows OS<br>
+      2. Show confirm dialog when template already exists<br>
+      <br>
+      <b>v1.6</b><br>
+      1. Supports Windows OS<br>
+      2. Supports store configuration message<br>
+      3. Add input data validating<br>
+      4. Modify ui style<br>
+      <br>
+      <b>v1.5</b><br>
+      1. Largely reduce the plugin size<br>
+      <br>
+      <b>v1.4</b><br>
+      1. Fix bug that crash occurs on startup for Android Studio 2.3<br>
+      <br>
+      <b>v1.3</b><br>
+      1. Supports editing configuration files<br>
+      2. Change some logic about building templates<br>
+      3. fix some issues<br>
+      <br>
+      <b>v1.2</b><br>
+      1. Automatically add the activity to the AndroidManifest.xml<br>
+      2. Supports editing a build.gradle file<br>
+      3. Supports select folder<br>
+      4. Supports select drawable<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+   <!--uncomment to enable plugin in all products-->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.puke.tb.SelectionAction" class="com.puke.tb.SelectionAction" text="Generate Template">
+      <keyboard-shortcut keymap="$default" first-keystroke="alt T"/>
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
